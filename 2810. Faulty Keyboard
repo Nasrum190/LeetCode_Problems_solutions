@@ -1,0 +1,20 @@
+class Solution {
+ public:
+  std::string finalString(std::string inputString) {
+    std::deque<char> charDeque;
+    bool isReversed = false;
+
+    for (const char character : inputString) {
+      if (character == 'i') {
+        isReversed = !isReversed;
+      } else if (isReversed) {
+        charDeque.push_front(character);
+      } else {
+        charDeque.push_back(character);
+      }
+    }
+
+    return isReversed ? std::string{charDeque.rbegin(), charDeque.rend()}
+                    : std::string{charDeque.begin(), charDeque.end()};
+  }
+};
