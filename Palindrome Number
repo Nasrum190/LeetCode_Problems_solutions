@@ -1,0 +1,24 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        long int sum=0 ,rem;
+         long int num = x;
+         long int rev = 0;
+        if (num < 0) {
+            return false;
+        }
+        else{
+           int  num1=num;
+        while (num1 != 0) {
+             rem = num1 % 10;
+             sum = sum * 10 + rem;
+             num1 = num1 / 10;
+        }
+        if (num == sum) {
+           return  true;
+        } else {
+            return false;
+        }
+        }
+    }
+};
